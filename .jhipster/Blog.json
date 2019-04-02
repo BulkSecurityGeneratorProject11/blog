@@ -29,7 +29,7 @@
             "otherEntityField": "login"
         }
     ],
-    "changelogDate": "20190402102318",
+    "changelogDate": "20190402122018",
     "entityTableName": "blog",
     "dto": "no",
     "pagination": "no",

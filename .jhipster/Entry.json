@@ -41,7 +41,7 @@
             "ownerSide": true
         }
     ],
-    "changelogDate": "20190402102319",
+    "changelogDate": "20190402122019",
     "entityTableName": "entry",
     "dto": "no",
     "pagination": "infinite-scroll",

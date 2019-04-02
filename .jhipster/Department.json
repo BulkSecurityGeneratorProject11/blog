@@ -10,7 +10,7 @@
         }
     ],
     "relationships": [],
-    "changelogDate": "20190402102321",
+    "changelogDate": "20190402122021",
     "entityTableName": "department",
     "dto": "no",
     "pagination": "no",
