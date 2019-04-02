@@ -11,7 +11,7 @@
             "fieldValidateRulesMinlength": 3
         },
         {
-            "fieldName": "hnadle",
+            "fieldName": "handle",
             "fieldType": "String",
             "fieldValidateRules": [
                 "required",

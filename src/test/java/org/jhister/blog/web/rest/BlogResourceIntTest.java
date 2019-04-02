@@ -89,7 +89,7 @@ public class BlogResourceIntTest {
     public static Blog createEntity(EntityManager em) {
         Blog blog = new Blog()
             .name(DEFAULT_NAME)
-            .hnadle(DEFAULT_HNADLE);
+            .handle(DEFAULT_HNADLE);
         return blog;
     }
 
@@ -114,7 +114,7 @@ public class BlogResourceIntTest {
         assertThat(blogList).hasSize(databaseSizeBeforeCreate + 1);
         Blog testBlog = blogList.get(blogList.size() - 1);
         assertThat(testBlog.getName()).isEqualTo(DEFAULT_NAME);
-        assertThat(testBlog.getHnadle()).isEqualTo(DEFAULT_HNADLE);
+        assertThat(testBlog.getHandle()).isEqualTo(DEFAULT_HNADLE);
     }
 
     @Test
@@ -156,10 +156,10 @@ public class BlogResourceIntTest {
 
     @Test
     @Transactional
-    public void checkHnadleIsRequired() throws Exception {
+    public void checkHandleIsRequired() throws Exception {
         int databaseSizeBeforeTest = blogRepository.findAll().size();
         // set the field null
-        blog.setHnadle(null);
+        blog.setHandle(null);
 
         // Create the Blog, which fails.
 
@@ -184,7 +184,7 @@ public class BlogResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(blog.getId().intValue())))
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME.toString())))
-            .andExpect(jsonPath("$.[*].hnadle").value(hasItem(DEFAULT_HNADLE.toString())));
+            .andExpect(jsonPath("$.[*].handle").value(hasItem(DEFAULT_HNADLE.toString())));
     }
     
     @Test
@@ -199,7 +199,7 @@ public class BlogResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(blog.getId().intValue()))
             .andExpect(jsonPath("$.name").value(DEFAULT_NAME.toString()))
-            .andExpect(jsonPath("$.hnadle").value(DEFAULT_HNADLE.toString()));
+            .andExpect(jsonPath("$.handle").value(DEFAULT_HNADLE.toString()));
     }
 
     @Test
@@ -224,7 +224,7 @@ public class BlogResourceIntTest {
         em.detach(updatedBlog);
         updatedBlog
             .name(UPDATED_NAME)
-            .hnadle(UPDATED_HNADLE);
+            .handle(UPDATED_HNADLE);
 
         restBlogMockMvc.perform(put("/api/blogs")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -236,7 +236,7 @@ public class BlogResourceIntTest {
         assertThat(blogList).hasSize(databaseSizeBeforeUpdate);
         Blog testBlog = blogList.get(blogList.size() - 1);
         assertThat(testBlog.getName()).isEqualTo(UPDATED_NAME);
-        assertThat(testBlog.getHnadle()).isEqualTo(UPDATED_HNADLE);
+        assertThat(testBlog.getHandle()).isEqualTo(UPDATED_HNADLE);
     }
 
     @Test

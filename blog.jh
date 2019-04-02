@@ -1,6 +1,6 @@
 entity Blog {
 	name String required minlength(3)
-    hnadle String required minlength(2)
+    handle String required minlength(2)
 }
 
 entity Entry {

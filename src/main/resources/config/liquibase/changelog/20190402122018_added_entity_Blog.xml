@@ -37,5 +37,10 @@
         </createTable>
         
     </changeSet>
+    <changeSet author="jhipster" id="renameColumn-example">
+        <renameColumn newColumnName="handle"
+                      oldColumnName="hnadle"
+                      tableName="blog"/>
+    </changeSet>
     <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
 </databaseChangeLog>
