@@ -33,8 +33,8 @@ public class Blog implements Serializable {
 
     @NotNull
     @Size(min = 2)
-    @Column(name = "hnadle", nullable = false)
-    private String hnadle;
+    @Column(name = "handle", nullable = false)
+    private String handle;
 
     @ManyToOne
     @JsonIgnoreProperties("blogs")
@@ -62,17 +62,17 @@ public class Blog implements Serializable {
         this.name = name;
     }
 
-    public String getHnadle() {
-        return hnadle;
+    public String getHandle() {
+        return handle;
     }
 
-    public Blog hnadle(String hnadle) {
-        this.hnadle = hnadle;
+    public Blog handle(String handle) {
+        this.handle = handle;
         return this;
     }
 
-    public void setHnadle(String hnadle) {
-        this.hnadle = hnadle;
+    public void setHandle(String handle) {
+        this.handle = handle;
     }
 
     public User getUser() {
@@ -114,7 +114,7 @@ public class Blog implements Serializable {
         return "Blog{" +
             "id=" + getId() +
             ", name='" + getName() + "'" +
-            ", hnadle='" + getHnadle() + "'" +
+            ", handle='" + getHandle() + "'" +
             "}";
     }
 }
